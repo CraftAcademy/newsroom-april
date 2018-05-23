@@ -4,7 +4,7 @@ Feature: Article overview and headline on landing page
   I should see a list of articles with headline and overview
 
 Background:
-  Given we have the following "articles"
+  Given we have the following articles
     | headline                  | content     |
     | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
     | Another awesome articles  | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
