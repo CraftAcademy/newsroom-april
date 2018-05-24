@@ -26,3 +26,5 @@
 /config/master.key
 
 .DS_Store
+
+coverage
