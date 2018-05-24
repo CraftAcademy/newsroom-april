@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article successfully saved and sent for approval"
       redirect_to root_path
     else
+      flash[:alert] = @article.errors.full_messages.first
       render 'new'
     end
 
