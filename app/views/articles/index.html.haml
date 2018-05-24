@@ -2,5 +2,5 @@
 
 #article-list
   - @articles.each do |article|
-    %h3= article.headline
+    %h3= link_to article.headline, article_path(article)
     %p= article.content
