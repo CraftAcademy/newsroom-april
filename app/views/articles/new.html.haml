@@ -11,6 +11,6 @@
   %br
   = form.label :category
   %br
-  = form.select(:category_id, Category.all.collect {|u| [u.name, u.id]}, prompt: 'Select')
+  = form.collection_select :category_id, Category.all, :id, :name
   %br
   = form.submit 'Save Article'

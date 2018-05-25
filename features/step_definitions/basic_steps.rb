@@ -24,5 +24,5 @@ When("I fill in {string} with {string}") do |field, text|
 end
 
 When("I select {string} from categories menu") do |option|
-  find('article[category_id]', text: 'Sports', visible: false).select_option
+  select option, from: 'article_category_id'
 end

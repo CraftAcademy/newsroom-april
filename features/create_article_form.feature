@@ -4,6 +4,9 @@ Feature: Article creation form
   I would like to have an article creation form
 
 Background:
+  Given we have the following categories
+    | name    |
+    | Sports  |
   Given I am on the landing page
   And I click "Create Article"
 
