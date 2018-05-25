@@ -48,6 +48,6 @@ The debate gained momentum a few years ago following several high-profile cases 
 Last year's #MeToo campaign may have brought the issue to its head, but the law change has been a long time coming, with Sweden's former centre-right government launching an inquiry in 2014 to find out why the country's relatively high rate of reported rape incidents does not lead to more convictions.
 
 In 2015, 22 percent of all sexual crimes (including both more serious offences and comparatively less serious) processed by police or prosecutors led to a conviction in court or other kind of punishment.",
-          category_id: 6}
+          category_id: 3}
 
   ]);
