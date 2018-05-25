@@ -22,3 +22,7 @@ end
 When("I fill in {string} with {string}") do |field, text|
   fill_in field, with: text
 end
+
+When("I select {string} from categories menu") do |option|
+  find('article[category_id]', text: 'Sports', visible: false).select_option
+end

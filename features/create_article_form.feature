@@ -10,6 +10,7 @@ Background:
 Scenario: Journalist creates an article
   When I fill in "Headline" with "The awesome article"
   And I fill in "Content" with "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+  And I select "Sports" from categories menu
   And I click "Save Article"
   Then I should see "Article successfully saved and sent for approval"
 

@@ -9,6 +9,8 @@
   %br
   = form.text_field :content
   %br
-  = form.select(:category_id, Category.all.collect {|u| [u.name, u.id]}, :prompt => 'Select')
+  = form.label :category
+  %br
+  = form.select(:category_id, Category.all.collect {|u| [u.name, u.id]}, prompt: 'Select')
   %br
   = form.submit 'Save Article'
