@@ -4,7 +4,14 @@ end
 
 Given("we have the following articles") do |table|
   table.hashes.each do |article|
+    article["category"] = Category.find_by(name:article["category"]) if article["category"] != nil
     create(:article, article)
+  end
+end
+
+Given("we have the following categories") do |table|
+  table.hashes.each do |category|
+    create(:category, category)
   end
 end
 

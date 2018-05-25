@@ -1,9 +1,10 @@
-%h3 Categories:
-- Category.all.each do |category|
-  = link_to category.name, category_path(category)
-  |
-
 %h1 News Room
+#category-bar
+  = link_to "All", root_path
+  - Category.all.each do |category|
+    |
+    = link_to category.name, category_path(category)
+%hr
 
 #article-list
   - @articles.each do |article|
