@@ -11,7 +11,7 @@ RSpec.describe Article, type: :model do
   describe 'Validation' do
     it { is_expected.to validate_presence_of :headline }
     it { is_expected.to validate_presence_of :content }
-
+    it { is_expected.to belong_to :category}
   end
 
   describe 'Factory' do
