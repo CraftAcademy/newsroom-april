@@ -18,4 +18,8 @@ Scenario: A logged i user can access article show view
   And I should see "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   And I should not see "Another awesome articles"
   And I should not see "Excepteur sint occaecat cupidatat non proident"
-  
+
+Scenario: A user not logged in cannot access article show view
+  When I click "The awesome article"
+  And I should not see "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+  And I should be redirected to login page

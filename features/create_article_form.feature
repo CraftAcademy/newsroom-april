@@ -5,6 +5,7 @@ Feature: Article creation form
 
 Background:
   Given I am on the landing page
+  And user is signed in
   And I click "Create Article"
 
 Scenario: Journalist creates an article

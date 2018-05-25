@@ -8,6 +8,8 @@ Background:
     | headline                  | content     |
     | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
 
+  And user is signed in
+
 Scenario: Subscriber views full article
   Given I am on the landing page
   And I click "The awesome article"
