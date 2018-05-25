@@ -4,8 +4,8 @@ Feature: Article creation form
   I would like to have an article creation form
 
 Background:
-  Given I am on the landing page
-  And user is signed in
+  Given user is signed in
+  And I am on the landing page
   And I click "Create Article"
 
 Scenario: Journalist creates an article

@@ -1,5 +1,5 @@
 Feature: Shows article in view
-  As a subscriber
+  As a user
   In order to view full article
   I should have a article view page
 
@@ -10,7 +10,7 @@ Background:
 
   And user is signed in
 
-Scenario: Subscriber views full article
+Scenario: User views full article
   Given I am on the landing page
   And I click "The awesome article"
   Then I should see "The awesome article"

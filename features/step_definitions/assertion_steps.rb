@@ -7,5 +7,5 @@ Then("I should not see {string}") do |expected_text|
 end
 
 Given("I should be redirected to login page") do
-  expect(current_path).to include "sign_in"
+  expect(current_path).to eq new_user_session_path
 end
