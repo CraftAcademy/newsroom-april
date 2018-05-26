@@ -11,10 +11,9 @@ RSpec.describe Article, type: :model do
   describe 'Validation' do
     it { is_expected.to validate_presence_of :headline }
     it { is_expected.to validate_presence_of :content }
-
   end
 
-  describe 'associations' do
+  describe 'Associations' do
     it { is_expected.to have_many :comments }
   end
 

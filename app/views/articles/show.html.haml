@@ -1,10 +1,10 @@
 %h3= @article.headline
 %p= @article.content
 
--# - @article.comments.each do |comment|
--#     %p= comment.body
+- @article.comments.each do |comment|
+  %p= comment.content
 
-= form_with model: @controller, local: true do |form|
+= form_with scope: :comment, url: article_comments_path(@article), local: true do |form|
   = form.label :content
   = form.text_field :content
   = form.submit

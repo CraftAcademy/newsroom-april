@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :articles, only: [:new, :create, :show]
-  root controller: :articles, action: :index
-  resource :articles do
-    resources :comments, only: [:create, :index]
+  resources :articles, only: [:new, :create, :show] do
+    resources :comments, only: [:new, :create, :index]
   end
+  root controller: :articles, action: :index
 end
