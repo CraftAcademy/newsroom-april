@@ -14,6 +14,10 @@ RSpec.describe Article, type: :model do
 
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many :comments }
+  end
+
   describe 'Factory' do
     it 'can create a valid instance' do
       expect(article).to be_valid
