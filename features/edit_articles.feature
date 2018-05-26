@@ -19,12 +19,12 @@ Scenario: Journalist edits an article
   And I click "Save Article"
   Then I should see "Article successfully saved and sent for approval"
 
-  Scenario: Journalist leaves headline empty
+Scenario: Journalist leaves headline empty
     When I fill in "Headline" with ""
     And I click "Save Article"
     Then I should see "Headline can't be blank"
 
-  Scenario: Journalist leaves content empty
+Scenario: Journalist leaves content empty
     When I fill in "Content" with ""
     And I click "Save Article"
     Then I should see "Content can't be blank"
