@@ -12,7 +12,7 @@ Background:
 Scenario: User visits articles and leaves comments
   Given I am on the landing page
   And I click "The awesome article"
-  And I fill in "Content" with "this article was awesome"
+  And I fill in "Body" with "this article was awesome"
   And I fill in "Email" with "test@test.com"
   And I click "Save comment"
   Then I should see "Thank you for your comment"
