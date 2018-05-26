@@ -1,0 +1,12 @@
+%h2 Edit Article
+
+= form_with model: @article , local: true do |form|
+  = form.label :headline
+  %br
+  = form.text_field :headline
+  %br
+  = form.label :content
+  %br
+  = form.text_field :content
+  %br
+  = form.submit 'Save Article'

@@ -15,3 +15,8 @@ end
 When("I fill in {string} with {string}") do |field, text|
   fill_in field, with: text
 end
+
+Given("I am on the {string} page") do |article_title|
+  article = Article.find_by(headline: article_title)
+  visit article_path(article)
+end
