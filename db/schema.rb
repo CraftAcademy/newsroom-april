@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_05_26_121058) do
+=======
+ActiveRecord::Schema.define(version: 2018_05_25_122609) do
+>>>>>>> c3635fea646e08f6723d56d671798b5e23d1aac7
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_05_26_121058) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -30,6 +35,8 @@ ActiveRecord::Schema.define(version: 2018_05_26_121058) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+=======
+>>>>>>> c3635fea646e08f6723d56d671798b5e23d1aac7
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,5 +54,8 @@ ActiveRecord::Schema.define(version: 2018_05_26_121058) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "comments", "articles"
+=======
+>>>>>>> c3635fea646e08f6723d56d671798b5e23d1aac7
 end
