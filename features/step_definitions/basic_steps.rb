@@ -37,3 +37,16 @@ Given("I am on the {string} page") do |article_title|
   article = Article.find_by(headline: article_title)
   visit article_path(article)
 end
+
+Given("the following users exist") do |table|
+  table.hashes.each do |user|
+    create(:user, user)
+  end
+end
+
+Given("I am signed in as {string}") do |user_email|
+  user = User.find_by(email: user_email)
+  login_as user
+end
+
+
