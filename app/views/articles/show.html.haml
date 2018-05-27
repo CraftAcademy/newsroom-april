@@ -2,4 +2,12 @@
 %p= @article.content
 %p= link_to 'Edit', edit_article_path(@article)
 
+- @article.comments.each do |comment|
+  %p= comment.content
+
+= form_with scope: :comment, url: article_comments_path(@article), local: true do |form|
+  = form.label :content
+  = form.text_field :content
+  = form.submit
+
 = link_to 'Back', root_path
