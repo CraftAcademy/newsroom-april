@@ -10,7 +10,8 @@ Background:
     | Another awesome articles  | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
 
 Scenario: User visits articles and leaves comments
-  Given I am on the landing page
+  Given user is signed in
+  And I am on the landing page
   And I click "The awesome article"
   And I fill in "Content" with "this article was awesome"
   And I click "Save"
