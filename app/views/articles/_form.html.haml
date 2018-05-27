@@ -7,4 +7,6 @@
   %br
   = form.text_field :content
   %br
+  = form.collection_select :category_id, @categories, :id, :name
+  %br
   = form.submit 'Save Article'

@@ -4,6 +4,10 @@ Feature: Article creation form
   I would like to have an article creation form
 
 Background:
+  Given we have the following categories
+    | name    |
+    | Sports  |
+
   Given user is signed in
   And I am on the landing page
   And I click "Create Article"
@@ -11,6 +15,7 @@ Background:
 Scenario: Journalist creates an article
   When I fill in "Headline" with "The awesome article"
   And I fill in "Content" with "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+  And I select "Sports" from categories menu
   And I click "Save Article"
   Then I should see "Article successfully saved and sent for approval"
 
