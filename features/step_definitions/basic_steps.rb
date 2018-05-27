@@ -20,3 +20,8 @@ Given("user is signed in") do
   user = create(:user)
   login_as user
 end
+
+Given("I am on the {string} page") do |article_title|
+  article = Article.find_by(headline: article_title)
+  visit article_path(article)
+end
