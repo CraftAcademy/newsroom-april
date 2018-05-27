@@ -4,7 +4,8 @@ end
 
 Given("we have the following articles") do |table|
   table.hashes.each do |article|
-    article["category"] = Category.find_by(name:article["category"]) if article["category"] != nil
+    category = article["category"]
+    article["category"] = Category.find_by(name: category) if category != nil
     create(:article, article)
   end
 end

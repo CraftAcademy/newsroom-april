@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
+    @categories = Category.all
   end
 
   def show
@@ -9,9 +10,11 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   def create
+    @categories = Category.all
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "Article successfully saved and sent for approval"
