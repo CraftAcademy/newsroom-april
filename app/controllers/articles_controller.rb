@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :load_categories, except: [:show]
 
   def index
     @articles = Article.all
-    @categories = Category.all
   end
 
   def show
@@ -12,11 +12,9 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @categories = Category.all
   end
 
   def create
-    @categories = Category.all
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "Article successfully saved and sent for approval"
@@ -45,5 +43,9 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:headline, :content, :category_id)
+  end
+
+  def load_categories
+    @categories = Category.all
   end
 end
