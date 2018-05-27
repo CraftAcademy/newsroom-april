@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2018_05_26_121058) do
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -49,5 +55,6 @@ ActiveRecord::Schema.define(version: 2018_05_26_121058) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "articles", "categories"
   add_foreign_key "comments", "articles"
 end
