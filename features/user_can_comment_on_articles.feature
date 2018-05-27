@@ -1,7 +1,7 @@
-Feature: Article overview and headline on landing page
+Feature: User can make comments to article
   As a User
-  In order to see what articles are available
-  I should see a list of articles with headline and overview
+  In order to express my opinion on the article
+  I would like to have the ability to make a comment
 
 Background:
   Given we have the following articles
@@ -9,10 +9,10 @@ Background:
     | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
     | Another awesome articles  | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
 
-  And I am on the landing page
-
-Scenario: User can see articles on landing page
+Scenario: User visits articles and leaves comments
   Given user is signed in
-  Then I should see "News Room"
-  And I should see "The awesome article"
-  And I should see "Another awesome articles"
+  And I am on the landing page
+  And I click "The awesome article"
+  And I fill in "Content" with "this article was awesome"
+  And I click "Save"
+  Then I should see "Comment successfully saved and sent for approval"

@@ -7,7 +7,9 @@ Background:
   Given we have the following categories
     | name    |
     | Sports  |
-  Given I am on the landing page
+
+  Given user is signed in
+  And I am on the landing page
   And I click "Create Article"
 
 Scenario: Journalist creates an article
