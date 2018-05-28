@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :load_categories, except: [:show]
 
   def index
-    @articles = Article.all
+    @articles = Article.where(approval:true)
   end
 
   def show
@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.approval = true if current_user.role == 'admin'
     if @article.save
       flash[:notice] = "Article successfully saved and sent for approval"
       redirect_to root_path
