@@ -10,11 +10,16 @@ Background:
     | journalist@test.com   | journalist  |
     | subscriber@test.com   | subscriber  |
 
-Scenario: Subscriber tries to create an article
+Scenario: Subscriber can NOT see the Create Article button
   Given I am signed in as "subscriber@test.com"
   And I am on the landing page
-  When I click "Create Article"
+  Then I should not see "Create Article"
+
+Scenario: Subscriber can NOT create articles by accessing New Article path
+  Given I am signed in as "subscriber@test.com"
+  When I visit the new article page
   Then I should see "You are not authorized to perform this action!"
+
 
 Scenario: Journalist creates an article
   Given I am signed in as "journalist@test.com"

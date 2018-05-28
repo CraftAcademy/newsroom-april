@@ -49,4 +49,6 @@ Given("I am signed in as {string}") do |user_email|
   login_as user
 end
 
-
+When("I visit the new article page") do
+  visit new_article_path
+end
