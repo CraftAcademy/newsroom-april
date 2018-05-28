@@ -1,6 +1,8 @@
 %h3= @article.headline
 %p= @article.content
 %p= link_to 'Edit', edit_article_path(@article)
+- if current_user.editor?
+  %p= link_to 'Delete', article_path(@article), method: :delete
 
 - @article.comments.each do |comment|
   %p= comment.content
