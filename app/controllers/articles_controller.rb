@@ -17,9 +17,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.approval = true if current_user.role == 'admin'
+    @article.user = current_user
+    @article.approval = true if @article.user.editor?
     if @article.save
-      flash[:notice] = "Article successfully saved and sent for approval"
+      flash[:notice] = "Article successfully saved and sent for approval" if current_user.role = 'journalist'
+      flash[:notice] = "Article successfully published" if current_user.role = 'editor'
       redirect_to root_path
     else
       flash[:alert] = @article.errors.full_messages.first
