@@ -3,5 +3,6 @@ FactoryBot.define do
     headline "MyText"
     content "MyText"
     category
+    user
   end
 end

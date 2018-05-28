@@ -4,11 +4,13 @@ RSpec.describe Article, type: :model do
   describe 'Database table' do
     it { is_expected.to have_db_column :headline }
     it { is_expected.to have_db_column :content }
+    it { is_expected.to have_db_column :approval }
   end
 
   describe 'Associations' do
     it { is_expected.to belong_to :category}
     it { is_expected.to have_many :comments }
+    it { is_expected.to belong_to :user }
   end
 
   describe 'Validation' do
