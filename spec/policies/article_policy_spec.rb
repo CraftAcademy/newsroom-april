@@ -2,27 +2,24 @@ require 'rails_helper'
 
 RSpec.describe ArticlePolicy do
 
-  let(:user) { User.new }
+  let(:subscriber) { create(:user, email: 'subscriber@test.com', role: :subscriber) }
+  let(:journalist) { create(:user, email: 'journalist@test.com', role: :journalist) }
+  let(:editor) { create(:user, email: 'editor@test.com', role: :editor) }
 
-  subject { described_class }
+  let(:article) { create(:article) }
 
-  permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'Subscriber can NOT create article' do
+    subject { described_class.new(subscriber, article) }
+    it { is_expected.to forbid_new_and_create_actions }
   end
 
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'Journalist can create article' do
+    subject { described_class.new(journalist, article) }
+    it { is_expected.to permit_new_and_create_actions }
   end
 
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+  context 'Editor can create article' do
+    subject { described_class.new(editor, article) }
+    it { is_expected.to permit_new_and_create_actions }
   end
 end

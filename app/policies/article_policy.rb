@@ -5,8 +5,12 @@ class ArticlePolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    true
+  end
+
   def new?
-    user == user.editor? || user.journalist?
+    @user.editor? || @user.journalist?
   end
 
   def create?
