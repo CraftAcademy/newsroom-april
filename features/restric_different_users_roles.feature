@@ -9,6 +9,9 @@ Background:
     | editor@test.com       | editor      |
     | journalist@test.com   | journalist  |
     | subscriber@test.com   | subscriber  |
+  Given we have the following categories
+    | name    |
+    | Sports  |
 
 Scenario: Subscriber can NOT see the Create Article button
   Given I am signed in as "subscriber@test.com"
@@ -27,6 +30,7 @@ Scenario: Journalist creates an article
   When I click "Create Article"
   When I fill in "Headline" with "The new article"
   And I fill in "Content" with "This is the new text content"
+  And I select "Sports" from categories menu
   And I click "Save Article"
   Then I should see "Article successfully saved and sent for approval"
   When I am on the landing page
