@@ -17,7 +17,7 @@ Bundler.require(*Rails.groups)
 
 module NewsroomApril
   class Application < Rails::Application
-    
+
     config.load_defaults 5.2
     config.generators do |generate|
       generate.helper false
@@ -28,7 +28,10 @@ module NewsroomApril
       generate.controller_specs false
       generate.system_tests false
     end
-    
+
     config.generators.system_tests = nil
+
+    config.i18n.availible_locales = [:se, :en]
+    config.i18n.default_lacale = :en
   end
 end
