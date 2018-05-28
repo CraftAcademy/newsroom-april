@@ -11,6 +11,7 @@ Background:
 
 Scenario: User changes application language to sv
   Given I am on the landing page
+  And I should see "The awesome article"
   When I click "SV"
-  Then I should see "Den Fantastiska artikeln"
+  Then I should see "Den fantastiska artikeln"
   And I should see "Alla"
