@@ -31,7 +31,7 @@ module NewsroomApril
 
     config.generators.system_tests = nil
 
-    config.i18n.available_locales = [:se, :en]
+    config.i18n.available_locales = [:sv, :en]
     config.i18n.default_locale = :en
   end
 end
