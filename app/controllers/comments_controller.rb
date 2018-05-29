@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new(content: comment_params[:content], article_id: article_params[:article_id])
+    @comment = Comment.new(content: comment_params[:content], article_id: article_params[:article_id], user: current_user)
     if @comment.save
       flash[:notice] = "Comment successfully saved and sent for approval"
     else
