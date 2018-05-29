@@ -9,12 +9,11 @@ class ArticlePolicy < ApplicationPolicy
     true
   end
 
-  def new?
+  def create?
     @user.editor? || @user.journalist?
   end
 
-  def create?
-    new?
+  def update?
+    @user.editor? || @user.journalist?
   end
-
 end

@@ -36,10 +36,12 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.approval = false
     if @article.update(article_params)
       flash[:notice] = "Article successfully saved and sent for approval"
       redirect_to article_path(@article)
     else
+      @article.approval = true
       flash[:alert] = @article.errors.full_messages.first
       render 'edit'
     end
