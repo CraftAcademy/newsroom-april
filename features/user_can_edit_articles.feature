@@ -5,8 +5,8 @@ Feature: Journalist can edit articles
 
 Background:
   Given we have the following articles
-    | headline                  | content     |
-    | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
+    | headline                  | content     | approval |
+    | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. | true |
   And user is signed in
   And I am on the "The awesome article" page
   And I click "Edit"

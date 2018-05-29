@@ -10,9 +10,9 @@ Background:
     | Technology    |
 
   And we have the following articles
-    | headline                            | category   |
-    | The sport team won something        | Sports     |
-    | Some programers made some new stuff | Technology |
+    | headline                            | category   | approval |
+    | The sport team won something        | Sports     | true     |
+    | Some programers made some new stuff | Technology | true     |
 
   And I am on the landing page
 
