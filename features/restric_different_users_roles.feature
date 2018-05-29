@@ -23,7 +23,6 @@ Scenario: Subscriber can NOT create articles by accessing New Article path
   When I visit the new article page
   Then I should see "You are not authorized to perform this action!"
 
-
 Scenario: Journalist creates an article
   Given I am signed in as "journalist@test.com"
   And I am on the landing page
