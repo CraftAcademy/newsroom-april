@@ -1,10 +1,11 @@
 %h3= @article.headline
 %p= @article.content
-%p= link_to 'Edit', edit_article_path(@article)
+- if current_user.editor? || current_user.journalist?
+  %p= link_to 'Edit', edit_article_path(@article)
 - if current_user.editor?
   %p= link_to 'Delete', article_path(@article), method: :delete
 
-- @article.comments.each do |comment|
+- @comments.each do |comment|
   %p= comment.content
 
 = form_with scope: :comment, url: article_comments_path(@article), local: true do |form|

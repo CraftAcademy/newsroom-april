@@ -8,6 +8,11 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comments = @article.comments.where(approval:true)
+    if @article.approval == false
+      flash[:notice] = "Article is under approval process"
+      redirect_to root_path
+    end
   end
 
   def new
@@ -20,8 +25,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
     @article.approval = true if @article.user.editor?
     if @article.save
-      flash[:notice] = "Article successfully saved and sent for approval" if @article.user.journalist?
-      flash[:notice] = "Article successfully published" if @article.user.editor?
+      flash_for_articles(@article.user)
       redirect_to root_path
     else
       flash[:alert] = @article.errors.full_messages.first
@@ -36,12 +40,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.approval = false
+    @article.update(approval: false) if current_user.journalist?
     if @article.update(article_params)
-      flash[:notice] = "Article successfully saved and sent for approval"
+      flash_for_articles(current_user)
       redirect_to article_path(@article)
     else
-      @article.approval = true
       flash[:alert] = @article.errors.full_messages.first
       render 'edit'
     end
@@ -49,16 +52,11 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    if @article.user.editor?
-      if @article.destroy
-        flash[:notice] = "Article successfully deteled!"
-      else
-        flash[:alert] = @article.errors.full_messages.first
-      end
+    if @article.destroy
+      flash[:notice] = "Article successfully deteled!"
     else
-      flash[:alert] = "You are not authorized to delete this article"
+      flash[:alert] = @article.errors.full_messages.first
     end
-
     redirect_to root_path
   end
 
@@ -69,5 +67,14 @@ class ArticlesController < ApplicationController
 
   def load_categories
     @categories = Category.all
+  end
+
+  def flash_for_articles(user)
+    case user.role
+    when 'journalist'
+      flash[:notice] = "Article successfully saved and sent for approval"
+    when 'editor'
+      flash[:notice] = "Article successfully published"
+    end
   end
 end

@@ -10,10 +10,14 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def create?
-    @user.editor? || @user.journalist?
+    user.editor? || user.journalist?
   end
 
   def update?
-    @user.editor? || @user.journalist?
+    user.editor? || (user.journalist? && record.user == user)
+  end
+
+  def destroy?
+    user.editor?
   end
 end
