@@ -3,7 +3,7 @@ sv:
     confirmations:
       confirmed: "Ditt konto har bekräftats. Du är nu inloggad."
       send_instructions: "Du kommer att få epost med instruktioner om hur du kan bekräfta ditt konto inom några minuter."
-      send_paranoid_instructions: "Om din email är i vår databas, kommer du att få ett mail med instruktioner om hur du ska aktivera ditt konto inom några minuter."
+      send_paranoid_instructions: "Om din email finns i vår databas, kommer du att få ett mail med instruktioner om hur du ska aktivera ditt konto inom några minuter."
     failure:
       already_authenticated: "Du har redan loggat in."
       inactive: "Ditt konto har inte aktiverats ännu."
@@ -20,14 +20,14 @@ sv:
       reset_password_instructions:
         subject: "Instrukionter för att återställa lösenord"
       unlock_instructions:
-        subject: "Instruktioner för att låsa up konto"
+        subject: "Instruktioner för att låsa upp konto"
     omniauth_callbacks:
       failure: "Kunde inte autentisera dig med %{kind} för \"%{reason}\"."
       success: "Autentiserat med %{kind}-konto."
     passwords:
-      no_token: "Du har endast tillgång till den här sidan via ett epost för att återställa ditt lösenord. Om detta är fallet, var god kontrollera att du använder den fullständiga adressen i meddelandet."
+      no_token: "Du har endast tillgång till den här sidan via epost för att återställa ditt lösenord. Om detta är fallet, var god kontrollera att du använder den fullständiga adressen i meddelandet."
       send_instructions: "Du kommer få epost med instruktioner om hur du kan återställa ditt lösenord inom några minuter."
-      send_paranoid_instructions: "Om din email är i vår databas, kommer du att få en lösenordslänk till din mail."
+      send_paranoid_instructions: "Om din email finns i vår databas, kommer du att få en lösenordslänk till din email."
       updated: "Ditt lösenord har uppdaterats. Du är nu inloggad."
       updated_not_active: "Ditt lösenord har uppdaterats."
     registrations:
@@ -45,12 +45,12 @@ sv:
     unlocks:
       send_instructions: "Du kommer få epost med instruktioner om hur du kan låsa upp ditt konto inom några minuter."
       send_paranoid_instructions: "Om ditt konto finns, kommer du att få ett email med instruktioner om hur du låser upp det inom några minuter."
-      unlocked: "Ditt konto är upp låsts. Du kan nu logga in."
+      unlocked: "Ditt konto är upplåst. Du kan nu logga in."
   errors:
     messages:
       already_confirmed: "är redan bekräftad, vänligen logga in igen"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "har löpt ut, var god begär en ny"
+      expired: "har löpt ut, var god begär ett nytt"
       not_found: "hittades inte"
       not_locked: "var inte låst"
       not_saved:

@@ -1,18 +1,18 @@
 sv:
   navbar:
-    create: 'Ny Artikeln'
+    create: 'Ny Artikel'
     sign_up: 'Bli Medlem'
     sign_in: 'Logga In'
   categories:
     all_categories: 'Alla'
 
   site_info:
-    site_title: 'Nyheds Posten'
+    site_title: 'NyhetsPosten'
   article:
     headline: 'Rubrik'
-    content: 'Innehåll' 
-    form_submit: 'Spara Artikel' 
+    content: 'Innehåll'
+    form_submit: 'Spara Artikel'
     edit_page_title: 'Redigera Artikel'
-    edit_link: 'Redigera' 
+    edit_link: 'Redigera'
     new_page_title: 'Skapa Ny Artikel'
-    back_link: 'Tillbaka' 
+    back_link: 'Tillbaka'
