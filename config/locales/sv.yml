@@ -3,6 +3,8 @@ sv:
     create: 'Ny Artikel'
     sign_up: 'Bli Medlem'
     sign_in: 'Logga In'
+    language_en: 'English'
+    language_sv: 'Svenska'
   categories:
     all_categories: 'Alla'
 

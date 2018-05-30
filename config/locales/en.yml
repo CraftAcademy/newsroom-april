@@ -3,6 +3,8 @@ en:
     create: 'Create Article'
     sign_up: 'Sign Up'
     sign_in: 'Sign In'
+    language_en: 'English'
+    language_sv: 'Svenska'
   categories:
     all_categories: 'All'
 

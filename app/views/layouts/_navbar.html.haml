@@ -3,7 +3,7 @@
 = link_to t('navbar.sign_up'), new_user_registration_path
 
 - if I18n.locale != I18n.default_locale
-  = link_to "English", { locale: 'en' }
+  = link_to t("navbar.language_en"), { locale: 'en' }
 - else
-  = link_to "Svenska", { locale: 'sv' }
+  = link_to t("navbar.language_sv"), { locale: 'sv' }
 
