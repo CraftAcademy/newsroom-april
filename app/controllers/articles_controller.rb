@@ -40,8 +40,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(approval: false) if current_user.journalist?
     if @article.update(article_params)
+      @article.update(approval: false) if current_user.journalist?
       flash_for_articles(current_user)
       redirect_to article_path(@article)
     else

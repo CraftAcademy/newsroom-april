@@ -1,4 +1,4 @@
-Feature: Restrict different user roles (editor, journalist, subscriber)
+Feature: Restrict access to different user roles (editor, journalist, subscriber)
   As a owner
   In order to restrict how much access different users have
   I would like to add different user roles
@@ -24,7 +24,7 @@ Scenario: Subscriber can NOT create articles by accessing New Article path
   When I visit the new article page
   Then I should see "You are not authorized to perform this action!"
 
-Scenario: Journalist creates an article
+Scenario: Journalist can create an article
   Given I am signed in as "journalist@test.com"
   And I am on the landing page
   When I click "Create Article"
@@ -33,10 +33,10 @@ Scenario: Journalist creates an article
   And I select "Sports" from categories menu
   And I click "Save Article"
   Then I should see "Article was successfully saved and sent for approval"
-  When I am on the landing page
+  But when I am on the landing page
   Then I should not see "The new article"
 
-Scenario: Editor creates an article then deletes it
+Scenario: Editor can creates an article
   Given I am signed in as "editor@test.com"
   And I am on the landing page
   When I click "Create Article"
@@ -47,7 +47,3 @@ Scenario: Editor creates an article then deletes it
   When I am on the landing page
   Then I should see "The new article"
   When I click "The new article"
-  And I click "Delete"
-  Then I should see "Article was successfully deleted!"
-  When I am on the landing page
-  Then I should not see "The new article"

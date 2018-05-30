@@ -1,6 +1,6 @@
 - if user_signed_in?
   = "Signed in as: #{current_user.role.capitalize} (#{current_user.email}) |"
-  = link_to("Create Article", new_article_path) + "|" if current_user.role != 'subscriber'
+  = link_to("Create Article", new_article_path) + "|" if policy(Article).new?
   = link_to "Sign Out", destroy_user_session_path, method: :delete
 - else
   = link_to "Sign In", new_user_session_path
