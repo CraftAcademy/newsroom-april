@@ -17,7 +17,7 @@ Scenario: Journalist creates an article
   And I fill in "Content" with "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   And I select "Sports" from categories menu
   And I click "Save Article"
-  Then I should see "Article successfully saved and sent for approval"
+  Then I should see "Article was successfully saved and sent for approval"
 
 Scenario: Journalist leaves headline empty
   When I fill in "Content" with "Lorem ipsum dolor sit amet, consectetur adipisicing elit"

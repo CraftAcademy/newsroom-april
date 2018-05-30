@@ -23,7 +23,7 @@ Scenario: Journalist edits an article
   When I fill in "Headline" with "The modified article"
   And I fill in "Content" with "This is the modified text content"
   And I click "Save Article"
-  Then I should see "Article successfully saved and sent for approval"
+  Then I should see "Article was successfully saved and sent for approval"
 
 Scenario: Journalist leaves headline empty
     When I fill in "Headline" with ""

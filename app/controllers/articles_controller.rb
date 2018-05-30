@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      flash[:notice] = "Article successfully deteled!"
+      flash[:notice] = "Article was successfully deleted!"
     else
       flash[:alert] = @article.errors.full_messages.first
     end
@@ -72,9 +72,9 @@ class ArticlesController < ApplicationController
   def flash_for_articles(user)
     case user.role
     when 'journalist'
-      flash[:notice] = "Article successfully saved and sent for approval"
+      flash[:notice] = "Article was successfully saved and sent for approval"
     when 'editor'
-      flash[:notice] = "Article successfully published"
+      flash[:notice] = "Article was successfully published"
     end
   end
 end

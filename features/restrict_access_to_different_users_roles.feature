@@ -9,6 +9,7 @@ Background:
     | editor@test.com       | editor      |
     | journalist@test.com   | journalist  |
     | subscriber@test.com   | subscriber  |
+
   Given we have the following categories
     | name    |
     | Sports  |
@@ -31,7 +32,7 @@ Scenario: Journalist creates an article
   And I fill in "Content" with "This is the new text content"
   And I select "Sports" from categories menu
   And I click "Save Article"
-  Then I should see "Article successfully saved and sent for approval"
+  Then I should see "Article was successfully saved and sent for approval"
   When I am on the landing page
   Then I should not see "The new article"
 
@@ -42,11 +43,11 @@ Scenario: Editor creates an article then deletes it
   When I fill in "Headline" with "The new article"
   And I fill in "Content" with "This is the new text content"
   And I click "Save Article"
-  Then I should see "Article successfully published"
+  Then I should see "Article was successfully published"
   When I am on the landing page
   Then I should see "The new article"
   When I click "The new article"
   And I click "Delete"
-  Then I should see "Article successfully deteled!"
+  Then I should see "Article was successfully deleted!"
   When I am on the landing page
   Then I should not see "The new article"
