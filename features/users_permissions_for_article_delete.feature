@@ -1,4 +1,4 @@
-Feature: Users have different premissions for article creation, depeneding on their roles (editor, journalist, subscriber)
+Feature: Users have different premissions for article deletion, depeneding on their roles (editor, journalist, subscriber)
   As a owner
   In order to restrict how much access different users have
   I would like to add different user roles
