@@ -4,10 +4,15 @@ Feature: Journalist can edit articles
   I would like to be able to edit and resubmit my articles
 
 Background:
-  Given we have the following articles
-    | headline                  | content     | approval |
-    | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. | true |
-  And user is signed in
+  Given the following users exist
+    | email                 | role        |
+    | journalist@test.com   | journalist  |
+
+  And we have the following articles
+    | headline            | content                    | user                 | approval |
+    | The awesome article | Lorem ipsum dolor sit amet | journalist@test.com  |true      |
+
+  And I am signed in as "journalist@test.com"
   And I am on the "The awesome article" page
   And I click "Edit"
 
