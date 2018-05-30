@@ -16,3 +16,6 @@ sv:
     edit_link: 'Redigera'
     new_page_title: 'Skapa Ny Artikel'
     back_link: 'Tillbaka'
+  comment:
+    comment_content: 'Kommentera'
+    submit: 'Skicka Kommentar'  

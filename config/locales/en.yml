@@ -16,3 +16,6 @@ en:
     edit_link: 'Edit' 
     new_page_title: 'Create New Article'
     back_link: 'Back' 
+  comment:
+    comment_content: 'Comment'
+    submit: 'Submit Comment'
