@@ -54,7 +54,7 @@ Scenario: Editor can edit any article and it gets published
   When I click "Edit"
   And I fill in "Headline" with "The modified article"
   And I click "Save Article"
-  Then I should see "Article was successfully approval"
+  Then I should see "Article was successfully published"
   And I should see "The modified article"
   When I am on the landing page
   Then I should see "The modified article"

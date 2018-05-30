@@ -9,8 +9,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comments = @article.comments.where(published:true)
-    if current_user != @article.user && @article.published== false
-      flash[:notice] = "Article is under published process"
+    if @article.published== false && current_user != @article.user
+      flash[:notice] = "Article is under approval process"
       redirect_to root_path
     end
   end
@@ -74,7 +74,7 @@ class ArticlesController < ApplicationController
     when 'journalist'
       flash[:notice] = "Article was successfully saved and sent for approval"
     when 'editor'
-      flash[:notice] = "Article was successfully approval"
+      flash[:notice] = "Article was successfully published"
     end
   end
 end

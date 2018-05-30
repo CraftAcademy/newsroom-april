@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   def flash_for_comments(user)
     case user.role
     when 'editor'
-      flash[:notice] = "Comment was successfully approval"
+      flash[:notice] = "Comment was successfully published"
     else
       flash[:notice] = "Comment was successfully saved and sent for approval"
     end
