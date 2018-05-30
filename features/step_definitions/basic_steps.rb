@@ -54,3 +54,8 @@ end
 When("I visit the new article page") do
   visit new_article_path
 end
+
+When("I visit {string} edit page") do |article_title|
+  article = Article.find_by(headline: article_title)
+  visit edit_article_path(article)
+end

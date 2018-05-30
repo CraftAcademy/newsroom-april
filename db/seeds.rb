@@ -33,7 +33,7 @@ The company has been informed of 11 accidents, with two people suffering minor i
 Sladda accessory owners will also be reimbursed for their purchases, Ikea said.",
               category_id: 6,
               user_id: 2,
-              approval:true },
+              published:true },
 
             {headline: "Sweden votes through new sexual consent law",
              content: "The Swedish parliament has voted in favour of tightening the country's laws on sex crimes.
