@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comments = @article.comments.where(approval:true)
-    if @article.approval == false
+    if current_user != @article.user && @article.approval == false
       flash[:notice] = "Article is under approval process"
       redirect_to root_path
     end
