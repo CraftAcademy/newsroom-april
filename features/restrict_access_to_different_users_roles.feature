@@ -43,7 +43,7 @@ Scenario: Editor can creates an article
   When I fill in "Headline" with "The new article"
   And I fill in "Content" with "This is the new text content"
   And I click "Save Article"
-  Then I should see "Article was successfully published"
+  Then I should see "Article was successfully approval"
   When I am on the landing page
   Then I should see "The new article"
   When I click "The new article"

@@ -10,7 +10,7 @@ Background:
     | Technology    |
 
   And we have the following articles
-    | headline                            | category   | approval |
+    | headline                            | category   | published |
     | The sport team won something        | Sports     | true     |
     | Some programers made some new stuff | Technology | true     |
 

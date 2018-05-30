@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_145329) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.bigint "user_id"
-    t.boolean "approval", default: false
+    t.boolean "published", default: false
     t.index ["category_id"], name: "index_articles_on_category_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_05_29_145329) do
     t.datetime "updated_at", null: false
     t.bigint "article_id"
     t.bigint "user_id"
-    t.boolean "approval", default: false
+    t.boolean "published", default: false
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

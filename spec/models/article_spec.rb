@@ -4,7 +4,7 @@ RSpec.describe Article, type: :model do
   describe 'Database table' do
     it { is_expected.to have_db_column :headline }
     it { is_expected.to have_db_column :content }
-    it { is_expected.to have_db_column :approval }
+    it { is_expected.to have_db_column :published }
   end
 
   describe 'Associations' do

@@ -3,14 +3,14 @@ class ArticlesController < ApplicationController
   before_action :load_categories, except: [:show]
 
   def index
-    @articles = Article.where(approval:true)
+    @articles = Article.where(published:true)
   end
 
   def show
     @article = Article.find(params[:id])
-    @comments = @article.comments.where(approval:true)
-    if current_user != @article.user && @article.approval == false
-      flash[:notice] = "Article is under approval process"
+    @comments = @article.comments.where(published:true)
+    if current_user != @article.user && @article.published== false
+      flash[:notice] = "Article is under published process"
       redirect_to root_path
     end
   end
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.approval = true if @article.user.editor?
+    @article.published = true if @article.user.editor?
     if @article.save
       flash_for_articles(@article.user)
       redirect_to root_path
@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      @article.update(approval: false) if current_user.journalist?
+      @article.update(published: false) if current_user.journalist?
       flash_for_articles(current_user)
       redirect_to article_path(@article)
     else
@@ -74,7 +74,7 @@ class ArticlesController < ApplicationController
     when 'journalist'
       flash[:notice] = "Article was successfully saved and sent for approval"
     when 'editor'
-      flash[:notice] = "Article was successfully published"
+      flash[:notice] = "Article was successfully approval"
     end
   end
 end

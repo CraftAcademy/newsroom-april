@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(content: comment_params[:content], article_id: article_params[:article_id], user: current_user)
-    @comment.update(approval:true) if current_user.editor?
+    @comment.update(published:true) if current_user.editor?
     if @comment.save
       flash_for_comments(current_user)
     else
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   def flash_for_comments(user)
     case user.role
     when 'editor'
-      flash[:notice] = "Comment was successfully published"
+      flash[:notice] = "Comment was successfully approval"
     else
       flash[:notice] = "Comment was successfully saved and sent for approval"
     end
