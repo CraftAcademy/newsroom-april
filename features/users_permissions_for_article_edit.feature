@@ -12,9 +12,9 @@ Background:
     | subscriber@test.com   | subscriber  |
 
   And we have the following articles
-    | headline             | user                   | published |
-    | The Awesome Article  | journalist_1@test.com  | true      |
-    | The Second Article   | journalist_2@test.com  | true      |
+    | headline             | user                   |
+    | The Awesome Article  | journalist_1@test.com  |
+    | The Second Article   | journalist_2@test.com  |
 
 Scenario: Subscriber can Not see edit button
   Given I am signed in as "subscriber@test.com"

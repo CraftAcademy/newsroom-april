@@ -11,8 +11,8 @@ Background:
     | subscriber@test.com   | subscriber  |
 
   And we have the following articles
-    | headline             | user                   | published |
-    | The Awesome Article  | journalist@test.com  | true      |
+    | headline             | user                 |
+    | The Awesome Article  | journalist@test.com  |
 
 Scenario: Subscriber can comment on articles and it goes for approval
   Given I am signed in as "subscriber@test.com"

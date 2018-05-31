@@ -36,7 +36,7 @@ Scenario: Journalist can create an article
   But when I am on the landing page
   Then I should not see "The new article"
 
-Scenario: Editor can creates an article
+Scenario: Editor can create an article
   Given I am signed in as "editor@test.com"
   And I am on the landing page
   When I click "Create Article"

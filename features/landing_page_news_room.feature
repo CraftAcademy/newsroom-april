@@ -5,9 +5,9 @@ Feature: Article overview and headline on landing page
 
 Background:
   Given we have the following articles
-    | headline                  | content     | published |
-    | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. | true |
-    | Another awesome articles  | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. | true |
+    | headline                  |
+    | The awesome article       |
+    | Another awesome articles  |
 
   And I am on the landing page
 

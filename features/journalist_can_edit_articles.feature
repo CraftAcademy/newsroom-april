@@ -9,8 +9,8 @@ Background:
     | journalist@test.com   | journalist  |
 
   And we have the following articles
-    | headline            | content                    | user                 | published |
-    | The awesome article | Lorem ipsum dolor sit amet | journalist@test.com  |true      |
+    | headline            | content                    | user                 |
+    | The awesome article | Lorem ipsum dolor sit amet | journalist@test.com  |
 
   And I am signed in as "journalist@test.com"
   And I am on the "The awesome article" page

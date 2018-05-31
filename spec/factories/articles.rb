@@ -4,5 +4,6 @@ FactoryBot.define do
     content "MyText"
     category
     user
+    published true
   end
 end
