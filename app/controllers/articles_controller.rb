@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comments = @article.comments.where(published:true)
     if @article.published== false && current_user != @article.user
-      flash[:notice] = "Article is under approval process"
+      flash[:notice] = t('flash.article.in_process')
       redirect_to root_path
     end
   end
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      flash[:notice] = "Article was successfully deleted!"
+      flash[:notice] = t('flash.article.delete')
     else
       flash[:alert] = @article.errors.full_messages.first
     end
@@ -72,9 +72,9 @@ class ArticlesController < ApplicationController
   def flash_for_articles(user)
     case user.role
     when 'journalist'
-      flash[:notice] = "Article was successfully saved and sent for approval"
+      flash[:notice] = t('flash.article.sent_approval')
     when 'editor'
-      flash[:notice] = "Article was successfully published"
+      flash[:notice] = t('flash.article.published')
     end
   end
 end

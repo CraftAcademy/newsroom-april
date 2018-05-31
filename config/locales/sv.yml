@@ -26,5 +26,12 @@ sv:
 
   flash:
     comment:
-      published: 'Kommentaren har publicerats.'
-      sent_approval: 'Kommentaren har sparats och skickats för godkännande.'
+      published: 'Kommentaren har publicerats'
+      sent_approval: 'Kommentaren har sparats och skickats för godkännande'
+    article:
+      published: 'Artikeln har publicerats'
+      sent_approval: 'Artikeln har sparats och skickats för godkännande'
+      in_process: 'Artikeln behandlas'
+      delete: 'Artikeln har raderats!'
+    pundit:
+      not_authorized: 'Du är inte behörig att utföra denna åtgärd!'

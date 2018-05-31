@@ -26,5 +26,12 @@ en:
 
   flash:
     comment:
-      published: 'Comment was successfully published.'
-      sent_approval: 'Comment was successfully saved and sent for approval.'
+      published: 'Comment was successfully published'
+      sent_approval: 'Comment was successfully saved and sent for approval'
+    article:
+      published: 'Article was successfully published'
+      sent_approval: 'Article was successfully saved and sent for approval'
+      in_process: 'Article is under approval process'
+      delete: 'Article was successfully deleted!'
+    pundit:
+      not_authorized: 'You are not authorized to perform this action!'

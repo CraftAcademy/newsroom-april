@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   private
   def user_not_authorized
-    redirect_to root_path, notice: 'You are not authorized to perform this action!'
+    redirect_to root_path, notice: t('flash.pundit.not_authorized')
   end
 
   def set_locale
