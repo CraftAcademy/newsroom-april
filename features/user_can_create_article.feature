@@ -4,11 +4,15 @@ Feature: Article creation form
   I would like to have an article creation form
 
 Background:
-  Given we have the following categories
+  Given the following users exist
+    | email                 | role        |
+    | journalist@test.com   | journalist  |
+
+  And we have the following categories
     | name    |
     | Sports  |
 
-  Given user is signed in
+  Given I am signed in as "journalist@test.com"
   And I am on the landing page
   And I click "Create Article"
 
@@ -17,7 +21,7 @@ Scenario: Journalist creates an article
   And I fill in "Content" with "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   And I select "Sports" from categories menu
   And I click "Save Article"
-  Then I should see "Article successfully saved and sent for approval"
+  Then I should see "Article was successfully saved and sent for approval"
 
 Scenario: Journalist leaves headline empty
   When I fill in "Content" with "Lorem ipsum dolor sit amet, consectetur adipisicing elit"

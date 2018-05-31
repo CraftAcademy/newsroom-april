@@ -3,6 +3,7 @@ en:
     create: 'Create Article'
     sign_up: 'Sign Up'
     sign_in: 'Sign In'
+    sign_out: 'Sign Out'
     language_en: 'English'
     language_sv: 'Svenska'
   categories:
@@ -12,12 +13,25 @@ en:
     site_title: 'News Room'
   article:
     headline: 'Headline'
-    content: 'Content' 
-    form_submit: 'Save Article' 
+    content: 'Content'
+    form_submit: 'Save Article'
     edit_page_title: 'Edit Article'
-    edit_link: 'Edit' 
+    edit_link: 'Edit'
+    delete_link: 'Delete'
     new_page_title: 'Create New Article'
-    back_link: 'Back' 
+    back_link: 'Back'
   comment:
     comment_content: 'Comment'
     submit: 'Submit Comment'
+
+  flash:
+    comment:
+      published: 'Comment was successfully published'
+      sent_approval: 'Comment was successfully saved and sent for approval'
+    article:
+      published: 'Article was successfully published'
+      sent_approval: 'Article was successfully saved and sent for approval'
+      in_process: 'Article is under approval process'
+      delete: 'Article was successfully deleted!'
+    pundit:
+      not_authorized: 'You are not authorized to perform this action!'

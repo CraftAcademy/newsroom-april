@@ -3,6 +3,7 @@ sv:
     create: 'Ny Artikel'
     sign_up: 'Bli Medlem'
     sign_in: 'Logga In'
+    sign_out: 'Logga Ut'
     language_en: 'English'
     language_sv: 'Svenska'
   categories:
@@ -16,8 +17,21 @@ sv:
     form_submit: 'Spara Artikel'
     edit_page_title: 'Redigera Artikel'
     edit_link: 'Redigera'
+    delete_link: 'Radera'
     new_page_title: 'Skapa Ny Artikel'
     back_link: 'Tillbaka'
   comment:
     comment_content: 'Kommentera'
-    submit: 'Skicka Kommentar'  
+    submit: 'Skicka Kommentar'
+
+  flash:
+    comment:
+      published: 'Kommentaren har publicerats'
+      sent_approval: 'Kommentaren har sparats och skickats för godkännande'
+    article:
+      published: 'Artikeln har publicerats'
+      sent_approval: 'Artikeln har sparats och skickats för godkännande'
+      in_process: 'Artikeln behandlas'
+      delete: 'Artikeln har raderats!'
+    pundit:
+      not_authorized: 'Du är inte behörig att utföra denna åtgärd!'

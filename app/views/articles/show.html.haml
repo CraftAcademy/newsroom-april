@@ -1,8 +1,10 @@
 %h3= @article.headline
 %p= @article.content
-%p= link_to t('article.edit_link'), edit_article_path(@article)
 
-- @article.comments.each do |comment|
+%p= link_to t('article.edit_link'), edit_article_path(@article) if policy(@article).edit?
+%p= link_to t('article.delete_link'), article_path(@article), method: :delete if policy(@article).destroy?
+
+- @comments.each do |comment|
   %p= comment.content
 
 = form_with scope: :comment, url: article_comments_path(@article), local: true do |form|

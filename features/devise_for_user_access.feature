@@ -5,9 +5,9 @@ Feature: Logged in user can access article show view
 
 Background:
   Given we have the following articles
-    | headline                  | content     |
-    | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. |
-    | Another awesome articles  | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. |
+    | headline                  | content                                                  |
+    | The awesome article       | Lorem ipsum dolor sit amet, consectetur adipisicing elit |
+    | Another awesome articles  | Excepteur sint occaecat cupidatat non proident           |
 
 Scenario: A logged i user can access article show view
   Given user is signed in

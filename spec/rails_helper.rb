@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'coveralls'
+require 'pundit/matchers'
 Coveralls.wear_merged!('rails')
 
 ENV['RAILS_ENV'] ||= 'test'

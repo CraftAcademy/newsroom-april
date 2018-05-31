@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create([ {email: 'subscriber@test.com', password: '12345678', role: 'subscriber'},
+              {email: 'journalist@test.com', password: '12345678', role: 'journalist'},
+              {email: 'editor@test.com', password: '12345678', role: 'editor'}
+  ]);
 
 Category.create([ {name: "Sports"},
                   {name: "Entertainment"},
@@ -27,7 +31,9 @@ In its statement, Ikea said it had been informed that the bike's \"drive belt ca
 The company has been informed of 11 accidents, with two people suffering minor injuries as a result.
 
 Sladda accessory owners will also be reimbursed for their purchases, Ikea said.",
-              category_id: 6},
+              category_id: 6,
+              user_id: 2,
+              published:true },
 
             {headline: "Sweden votes through new sexual consent law",
              content: "The Swedish parliament has voted in favour of tightening the country's laws on sex crimes.
@@ -48,6 +54,7 @@ The debate gained momentum a few years ago following several high-profile cases 
 Last year's #MeToo campaign may have brought the issue to its head, but the law change has been a long time coming, with Sweden's former centre-right government launching an inquiry in 2014 to find out why the country's relatively high rate of reported rape incidents does not lead to more convictions.
 
 In 2015, 22 percent of all sexual crimes (including both more serious offences and comparatively less serious) processed by police or prosecutors led to a conviction in court or other kind of punishment.",
-          category_id: 3}
+          category_id: 3,
+          user_id: 2 }
 
   ]);

@@ -1,11 +1,13 @@
-Given("I am on the landing page") do
+Given /I am on the landing page/ do
   visit root_path(locale: 'en')
 end
 
 Given("we have the following articles") do |table|
   table.hashes.each do |article|
     category = article["category"]
+    user_email = article["user"]
     article["category"] = Category.find_by(name: category) if category != nil
+    article["user"]= User.find_by(email: user_email) if user_email != nil
     create(:article, article)
   end
 end
@@ -36,4 +38,24 @@ end
 Given("I am on the {string} page") do |article_title|
   article = Article.find_by(headline: article_title)
   visit article_path(article, locale: 'en')
+end
+
+Given("the following users exist") do |table|
+  table.hashes.each do |user|
+    create(:user, user)
+  end
+end
+
+Given("I am signed in as {string}") do |user_email|
+  user = User.find_by(email: user_email)
+  login_as user
+end
+
+When("I visit the new article page") do
+  visit new_article_path
+end
+
+When("I visit {string} edit page") do |article_title|
+  article = Article.find_by(headline: article_title)
+  visit edit_article_path(article)
 end
