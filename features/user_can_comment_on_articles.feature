@@ -12,6 +12,6 @@ Scenario: User visits articles and leaves comments
   Given user is signed in
   And I am on the landing page
   And I click "The awesome article"
-  And I fill in "Content" with "this article was awesome"
-  And I click "Save"
-  Then I should see "Comment was successfully saved and sent for approval"
+  And I fill in "Comment" with "this article was awesome"
+  And I click "Submit Comment"
+  Then I should see "Comment successfully saved and sent for approval"
