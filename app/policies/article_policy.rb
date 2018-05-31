@@ -1,16 +1,19 @@
 class ArticlePolicy < ApplicationPolicy
-  class Scope < Scope
-    def resolve
-      scope
-    end
-  end
 
-  def create?
+  def new?
     user.editor? || user.journalist?
   end
 
-  def update?
+  def create?
+    new?
+  end
+
+  def edit?
     user.editor? || (user.journalist? && record.user == user)
+  end
+
+  def update?
+    edit?
   end
 
   def destroy?
