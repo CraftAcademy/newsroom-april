@@ -14,4 +14,4 @@ Scenario: User visits articles and leaves comments
   And I click "The awesome article"
   And I fill in "Comment" with "this article was awesome"
   And I click "Submit Comment"
-  Then I should see "Comment successfully saved and sent for approval"
+  Then I should see "Comment was successfully saved and sent for approval"
