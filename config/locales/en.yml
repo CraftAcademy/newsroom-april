@@ -23,3 +23,8 @@ en:
   comment:
     comment_content: 'Comment'
     submit: 'Submit Comment'
+
+  flash:
+    comment:
+      published: 'Comment was successfully published.'
+      sent_approval: 'Comment was successfully saved and sent for approval.'

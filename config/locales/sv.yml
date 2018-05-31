@@ -23,3 +23,8 @@ sv:
   comment:
     comment_content: 'Kommentera'
     submit: 'Skicka Kommentar'
+
+  flash:
+    comment:
+      published: 'Kommentaren har publicerats.'
+      sent_approval: 'Kommentaren har sparats och skickats för godkännande.'
