@@ -1,3 +1,9 @@
-= link_to "Create Article", new_article_path
-= link_to "Sign In", new_user_session_path
-= link_to "Sign Up", new_user_registration_path
+= link_to t('navbar.create'), new_article_path
+= link_to t('navbar.sign_in'), new_user_session_path
+= link_to t('navbar.sign_up'), new_user_registration_path
+
+- if I18n.locale != I18n.default_locale
+  = link_to t("navbar.language_en"), { locale: 'en' }
+- else
+  = link_to t("navbar.language_sv"), { locale: 'sv' }
+

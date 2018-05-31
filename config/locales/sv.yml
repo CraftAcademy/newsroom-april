@@ -1,0 +1,23 @@
+sv:
+  navbar:
+    create: 'Ny Artikel'
+    sign_up: 'Bli Medlem'
+    sign_in: 'Logga In'
+    language_en: 'English'
+    language_sv: 'Svenska'
+  categories:
+    all_categories: 'Alla'
+
+  site_info:
+    site_title: 'NyhetsPosten'
+  article:
+    headline: 'Rubrik'
+    content: 'Innehåll'
+    form_submit: 'Spara Artikel'
+    edit_page_title: 'Redigera Artikel'
+    edit_link: 'Redigera'
+    new_page_title: 'Skapa Ny Artikel'
+    back_link: 'Tillbaka'
+  comment:
+    comment_content: 'Kommentera'
+    submit: 'Skicka Kommentar'  

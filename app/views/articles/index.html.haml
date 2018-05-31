@@ -1,6 +1,6 @@
-%h1 News Room
+%h1= t('site_info.site_title')
 #category-bar
-  = link_to "All", root_path
+  = link_to t('categories.all_categories'), root_path
   - @categories.each do |category|
     |
     = link_to category.name, category_path(category)

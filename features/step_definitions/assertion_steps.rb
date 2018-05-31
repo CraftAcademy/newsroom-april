@@ -17,5 +17,5 @@ Then("I should see {string} in {string}") do |expected_text, css_section|
 end
 
 Given("I should be redirected to login page") do
-  expect(current_path).to eq new_user_session_path
+  expect(page).to have_current_path(new_user_session_path(locale: 'en'))
 end
