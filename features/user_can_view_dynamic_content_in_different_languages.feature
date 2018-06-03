@@ -31,15 +31,12 @@ Background:
   And I should see "News Room"
   And I should see "The sport team won something"
 
-Scenario: User can see articles in swedish
-  Given I click "Svenska"
-  Then I should see "NyhetsPosten"
-  And I should see "Sport"
-  And show me the page
-  And I should see "Laget vann något"
-
-Scenario: User can see categories in swedish
+Scenario: User can see the site in swedish
   Given I click "Svenska"
   Then I should see "NyhetsPosten"
   And I should see "Sport"
   And I should see "Teknik"
+  And I should see "Laget vann något"
+  
+ 
+  

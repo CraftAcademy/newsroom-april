@@ -7,6 +7,7 @@ Given("we have the following articles") do |table|
   table.hashes.each do |article|
     category = article["category"]
     user_email = article["user"]
+    # binding.pry
     article["category"] = Category.find_by(name: category) if category != nil
     article["user"]= User.find_by(email: user_email) if user_email != nil
     create(:article, article)
