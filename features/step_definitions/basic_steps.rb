@@ -7,7 +7,6 @@ Given("we have the following articles") do |table|
   table.hashes.each do |article|
     category = article["category"]
     user_email = article["user"]
-    # binding.pry
     article["category"] = Category.find_by(name: category) if category != nil
     article["user"]= User.find_by(email: user_email) if user_email != nil
     create(:article, article)
@@ -19,7 +18,6 @@ Given("we have the following articles in swedish") do |table|
   all = Article.all
   I18n.locale = :sv
   table.hashes.each do |article|
-    # article["category"] = Category.find_by(name: category) if category != nil
     article["category"] = all[article_index].category
     all[article_index].update_attributes(article)
     article_index += 1
