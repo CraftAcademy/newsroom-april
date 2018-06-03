@@ -5,5 +5,7 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many :comments
 
-  translates :healine, :content
+  translates :headline, :content
+
+  Globalize.fallbacks = {en: [:en, :sv], sv: [:sv, :en]}
 end

@@ -13,8 +13,12 @@ Background:
     | Sports        |
 
   And we have the following articles
+    | headline                            | category   |  
+    | The sport team won something        | Sports     | 
+  
+  And we have the following articles in swedish
     | headline                            | category   |
-    | The sport team won something        | Sports     |
+    | Laget vann något                    | Sport      |
 
   And user is signed in
   And I am on the landing page
@@ -25,4 +29,5 @@ Scenario: User can change language to swedish
   Given I click "Svenska"
   Then I should see "NyhetsPosten"
   And I should see "Sport"
+  And show me the page
   And I should see "Laget vann något"

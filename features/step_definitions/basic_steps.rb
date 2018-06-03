@@ -12,6 +12,18 @@ Given("we have the following articles") do |table|
   end
 end
 
+Given("we have the following articles in swedish") do |table|
+  article_number = 0
+  all = Article.all
+  I18n.locale = :sv
+  table.hashes.each do |article|
+    # article["category"] = Category.find_by(name: category) if category != nil
+    article["category"] = all[article_number].category
+    all[article_number].update_attributes(article)
+    article_number += 1
+  end
+end
+
 Given("we have the following categories") do |table|
   table.hashes.each do |category|
     create(:category, category)
@@ -59,3 +71,8 @@ When("I visit {string} edit page") do |article_title|
   article = Article.find_by(headline: article_title)
   visit edit_article_path(article)
 end
+
+Then("show me the page") do
+  save_and_open_page
+end
+
