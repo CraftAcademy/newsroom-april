@@ -3,6 +3,7 @@ Given /I am on the landing page/ do
 end
 
 Given("we have the following articles") do |table|
+  I18n.locale = :en
   table.hashes.each do |article|
     category = article["category"]
     user_email = article["user"]
@@ -13,20 +14,30 @@ Given("we have the following articles") do |table|
 end
 
 Given("we have the following articles in swedish") do |table|
-  article_number = 0
+  article_index = 0
   all = Article.all
   I18n.locale = :sv
   table.hashes.each do |article|
     # article["category"] = Category.find_by(name: category) if category != nil
-    article["category"] = all[article_number].category
-    all[article_number].update_attributes(article)
-    article_number += 1
+    article["category"] = all[article_index].category
+    all[article_index].update_attributes(article)
+    article_index += 1
   end
 end
 
 Given("we have the following categories") do |table|
   table.hashes.each do |category|
     create(:category, category)
+  end
+end
+
+Given("we have the following categories in swedish") do |table|
+  category_index = 0
+  all = Category.all
+  I18n.locale = :sv
+  table.hashes.each do |category|
+    all[category_index].update_attributes(category)
+    category_index += 1
   end
 end
 
@@ -75,4 +86,3 @@ end
 Then("show me the page") do
   save_and_open_page
 end
-

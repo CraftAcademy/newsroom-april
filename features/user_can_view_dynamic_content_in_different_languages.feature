@@ -11,11 +11,17 @@ Background:
   And we have the following categories
     | name          |
     | Sports        |
+    | Technology    |
+
+  And we have the following categories in swedish
+    | name          |
+    | Sport         |
+    | Teknik        |
 
   And we have the following articles
-    | headline                            | category   |  
-    | The sport team won something        | Sports     | 
-  
+    | headline                            | category   |
+    | The sport team won something        | Sports     |
+
   And we have the following articles in swedish
     | headline                            | category   |
     | Laget vann något                    | Sport      |
@@ -25,9 +31,15 @@ Background:
   And I should see "News Room"
   And I should see "The sport team won something"
 
-Scenario: User can change language to swedish
+Scenario: User can see articles in swedish
   Given I click "Svenska"
   Then I should see "NyhetsPosten"
   And I should see "Sport"
   And show me the page
   And I should see "Laget vann något"
+
+Scenario: User can see categories in swedish
+  Given I click "Svenska"
+  Then I should see "NyhetsPosten"
+  And I should see "Sport"
+  And I should see "Teknik"
