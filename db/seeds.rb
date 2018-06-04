@@ -11,6 +11,7 @@ User.create([ {email: 'subscriber@test.com', password: '12345678', role: 'subscr
               {email: 'editor@test.com', password: '12345678', role: 'editor'}
   ]);
 
+I18n.locale = :en
 Category.create([ {name: "Sports"},
                   {name: "Entertainment"},
                   {name: "Local News"},
@@ -19,42 +20,93 @@ Category.create([ {name: "Sports"},
                   {name: "Technology"}
   ]);
 
-Article.create([
-              {headline: "Ikea recalls faulty bikes over fears they 'lead to falls'",
-               content: "Swedish furniture giant Ikea on Thursday announced a recall of its bicycles following a string of accidents caused by problems with the drive belt.
-\"Customers that have a Sladda bicycle are urged to stop using it and to return it to any Ikea store for a full refund,\" the DIY mammoth said in a statement.
+Article.create(headline: "Lorem ipsum dolor sit amet",
+               content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nunc diam, consectetur sed neque id, ullamcorper tempor nisl.
 
-The company has sold some 6,000 Sladda bicycles for a starting price of 500 euros ($585) in 26 countries since launch in August 2016 -- with about a third sold in Sweden.
+Mauris tincidunt faucibus dui non ullamcorper. Proin ornare vitae lorem quis ullamcorper. Integer vitae gravida magna. Aenean ut tellus laoreet, condimentum lacus gravida, consequat risus.
 
-In its statement, Ikea said it had been informed that the bike's \"drive belt can suddenly snap, which in turn can lead to falls\".
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam suscipit nulla eget nisi volutpat ultricies. Quisque libero nibh, vehicula ac purus eget, commodo suscipit odio.
 
-The company has been informed of 11 accidents, with two people suffering minor injuries as a result.
-
-Sladda accessory owners will also be reimbursed for their purchases, Ikea said.",
+Sed aliquam neque eget lorem lacinia, vitae condimentum neque pellentesque.",
               category_id: 6,
               user_id: 2,
-              published:true },
+              published:true)
 
-            {headline: "Sweden votes through new sexual consent law",
-             content: "The Swedish parliament has voted in favour of tightening the country's laws on sex crimes.
-From July 1st having sex with someone without their explicit consent in Sweden will be illegal (the law will treat consent as possible either through words or clear actions). This means that unless the sex is fully voluntary, it will be considered a criminal act, whether or not violence or threats were used.
+Article.create(headline: "Donec eu felis feugiat",
+               content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+Donec eu felis feugiat, pellentesque arcu id, faucibus orci. In finibus lacus vel mi consectetur consequat. Maecenas libero eros, eleifend et blandit vel, rutrum elementum est.
 
-There will also no longer be a need to prove intent for some very serious sex crimes, which means an alleged offender could be convicted even if he or she did not actively intend to rape the victim.
+Phasellus non turpis blandit sem tincidunt euismod eget in quam. Donec ut aliquet erat. Vivamus finibus, nisi congue vestibulum dapibus, magna eros sodales erat, blandit vulputate enim elit feugiat elit.
 
-\"This is just one step out of many to reach the goal that each human being's sexuality is fully respected,\" said Maria Arnholm, a member of the Liberal Party, in the parliamentary debate.
+Curabitur vitae arcu consequat, faucibus mauris tempus, cursus nunc. Vestibulum in placerat turpis. Etiam feugiat ligula elit, vel elementum libero tempus eget.
 
-The punishment for aggravated rape and rape of a child will be increased from a minimum of five years in jail, as opposed to the current four years. Parliament also urged the government to put forward a proposal to increase the punishment for rape in general to three years' imprisonment.
+Vivamus pulvinar est nulla, eu cursus justo mollis sit amet. Duis sit amet metus consectetur, tempor metus eleifend, viverra nunc. In fermentum nulla vel dolor dictum, eget gravida ipsum consectetur.
 
-The centre-left government had clarified some parts of the draft legislation after the Council on Legislation said that it was too unclear and difficult to know in advance what the new law considered illegal or not.
+Sed congue justo a elementum scelerisque. Sed et consequat justo. Quisque augue odio, aliquet et dignissim vitae, aliquet sed nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae",
+              category_id: 3,
+              user_id: 2,
+              published:true)
 
-Rape cases are often a matter of one person's word against the other, making it difficult to prove what has happened as there are generally no witnesses. But the matter of what is considered evidence will not be changed by the new legislation.
+Article.create(headline: "Donec eros mi",
+                content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+Donec eros mi, egestas sit amet quam nec, tristique semper sapien. Mauris congue, nisl at fringilla auctor, lacus urna dignissim enim, sed venenatis arcu purus vel augue.
 
-The debate gained momentum a few years ago following several high-profile cases in which alleged rapists were freed on the basis that they had not knowingly acted against the other person's wishes.
+In ac lectus rhoncus, dignissim risus at, convallis lectus. Suspendisse euismod nisi vitae eros rhoncus dignissim. In hac habitasse platea dictumst.
 
-Last year's #MeToo campaign may have brought the issue to its head, but the law change has been a long time coming, with Sweden's former centre-right government launching an inquiry in 2014 to find out why the country's relatively high rate of reported rape incidents does not lead to more convictions.
+Sed eu dolor urna. Donec eget tellus mollis, feugiat dolor sed, mattis leo. Quisque in erat et neque luctus imperdiet vel non velit. Suspendisse potenti.",
+               category_id: 1,
+               user_id: 2,
+               published:true)
 
-In 2015, 22 percent of all sexual crimes (including both more serious offences and comparatively less serious) processed by police or prosecutors led to a conviction in court or other kind of punishment.",
-          category_id: 3,
-          user_id: 2 }
+I18n.locale = :sv
 
-  ]);
+c = Category.find(1)
+c.update(name: "Sport")
+c = Category.find(2)
+c.update(name: "Underhållning")
+c = Category.find(3)
+c.update(name: "Lokala Nyheter")
+c = Category.find(4)
+c.update(name: "Ekonomi")
+c = Category.find(5)
+c.update(name: "Internationella Nyheter")
+c = Category.find(6)
+c.update(name: "Teknik")
+
+a = Article.first
+a.update(headline: "Svenska - Phasellus eu eros neque",
+         content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+Phasellus eu eros neque. Duis tristique erat sed velit tristique rutrum. Mauris sit amet erat mi. Nam tristique ut ligula sit amet cursus. Vivamus accumsan ex sapien, quis congue nisi vestibulum a.
+
+Duis gravida erat est, nec blandit lectus sagittis et. Etiam sit amet iaculis odio.
+
+Etiam ultrices eleifend tempor. Nam finibus massa dolor, a lobortis dui pharetra quis. Suspendisse potenti. In eget leo lacinia, bibendum neque vitae, aliquet arcu.
+
+Fusce a pretium lacus. Ut ut mattis turpis. Phasellus suscipit eget libero finibus rhoncus. Cras nec maximus ipsum. Vivamus felis augue, vestibulum ac magna non, imperdiet pulvinar purus.
+
+Pellentesque posuere ultrices tortor, quis tincidunt quam fermentum ac. Duis quis sem nulla. Ut vehicula augue eget leo egestas cursus. Etiam in mauris eu justo lacinia cursus.")
+
+c = Article.second
+c.update(headline: "Svenska - Lorem ipsum dolor sit amet",
+         content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra felis ac eros congue, a faucibus libero finibus. Sed iaculis tincidunt diam.
+
+Aenean facilisis cursus ante, ac mollis ex fermentum sit amet. In dapibus enim iaculis rhoncus volutpat. Sed mauris massa, convallis et metus vel, rutrum condimentum leo. Duis non bibendum nisi.
+
+Ut vehicula eros eu vestibulum maximus. In finibus ipsum nec magna vehicula porta. Donec eget turpis augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Donec velit tellus, efficitur sed sodales non, ullamcorper eu mauris.")
+
+c = Article.third
+c.update(headline: "Svenska - Proin non elit vestibulum",
+        content: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+Proin non elit vestibulum, sollicitudin justo a, interdum arcu. In sed ex quam. Aenean mattis scelerisque sem, ac tincidunt tortor vestibulum a.
+
+Quisque suscipit ultrices accumsan. Fusce id rhoncus elit. Vivamus a massa ex. Ut in sem eu elit tempor sagittis. Integer vitae lectus blandit, ornare erat a, euismod ante.
+
+Praesent molestie sit amet turpis sit amet convallis. Phasellus imperdiet magna sapien, auctor rhoncus est rhoncus at.
+
+Nullam vel neque aliquam ante sollicitudin cursus in luctus lorem. Mauris convallis metus eget justo ultricies, ac lobortis ligula vehicula.
+
+Praesent posuere ullamcorper mauris, et tristique nisi. Vestibulum tempus tortor ut ultrices scelerisque. Donec eleifend auctor tempor.")

@@ -28,3 +28,5 @@
 .DS_Store
 
 coverage
+/public/packs
+/public/packs-test

@@ -14,6 +14,8 @@ gem 'haml-rails', '~> 1.0'
 gem 'devise'
 gem 'pundit'
 gem 'rails-i18n'
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
 
 group :development, :test do
   gem 'coveralls', require: false
