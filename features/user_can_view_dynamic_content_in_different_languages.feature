@@ -26,17 +26,23 @@ Background:
     | headline                            | category   |
     | Laget vann något                    | Sport      |
 
-  And user is signed in
+  And I am signed in as "subscriber@test.com"
   And I am on the landing page
-  And I should see "News Room"
+
+Scenario: User can see the site in English
+  Then I should see "News Room"
+  And I should see "Sports"
+  And I should see "Technology"
   And I should see "The sport team won something"
 
-Scenario: User can see the site in swedish
+Scenario: User can see the site in Swedish
   Given I click "Svenska"
   Then I should see "NyhetsPosten"
   And I should see "Sport"
   And I should see "Teknik"
   And I should see "Laget vann något"
+
+
   
  
   
