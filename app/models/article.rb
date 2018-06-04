@@ -7,5 +7,4 @@ class Article < ApplicationRecord
 
   translates :headline, :content
 
-  # Globalize.fallbacks = {en: [:en, :sv], sv: [:sv, :en]}
 end
